@@ -124,7 +124,7 @@ export const themeSettings = (mode) => {
     return {
         palette:{
             mode:mode,
-            ...(mode === ' dark'
+            ...(mode === 'dark'
             ?{
                 primary:{
                     main:colors.primary[500],
@@ -205,12 +205,12 @@ export const useMode = () =>{
     const [mode, setMode] = useState("dark");
 
     const colorMode = useMemo(
-        () =>{
-            ()=>
-            setMode((prev)=>{prev==="light"?"dark":"light"})
-        }
+        () => ({
+            toggleColorMode: () =>
+                setMode((prev) => (prev === "light" ? "dark" : "light"))
+        })
     ,[]) 
-    const theme = useMemo(()=>{createTheme(themeSettings(mode)),[mode]})
+    const theme = useMemo(() => (createTheme(themeSettings(mode))), [mode])
 
     return [theme, colorMode];
 } 
