@@ -9,7 +9,6 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import { borderRadius } from "@mui/system";
-import { color } from "d3-color";
 
 const Topbar = () => {
   const theme = useTheme();
